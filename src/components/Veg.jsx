@@ -2,14 +2,15 @@ import {useEffect, useState} from 'react'
 import styled from 'styled-components' 
 import {Splide, SplideSlide} from '@splidejs/react-splide'
 import '@splidejs/react-splide/css';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'  
+import "../App.css"
 
 function Veg() { 
 
     const [Veg, setVeg] = useState([])
 
     const getVeg  = async() => { 
-        let API_KEY = '940401677c1c4f04a472a99fab775898'  
+        let API_KEY = 'ed3ffe8c668f4e859ec15356893268a4'  
 
           const check = localStorage.getItem('veg') 
 
@@ -32,42 +33,31 @@ function Veg() {
 
   return (
     <div> 
-            <Wrapper>
+            <div>
                 <h3>Vegetarian Picks</h3>  
-                <Splide options={{perPage: 3, arrows: true, pagination: false, gap: '1rem'}}>
+                <Splide options={{gap: '1rem', perPage: 3, arrows: false, gap: 12}}>
                 {
                     Veg.map((recipe) => {
                         return (
-                            <SplideSlide key={recipe.id}> 
-                            <Link to={`/recipe/${recipe.id}`} style={{textDecoration: 'none', color: 'black'}}>
-                            <Card style={{marginLeft: '19%'}}> 
-                               <img src={recipe.image} alt={recipe.title}/> 
-                               <p>{recipe.title}</p>
-                            </Card>
+                            <SplideSlide key={recipe.id} className="vegContainer"> 
+                            <Link to={`/recipe/${recipe.id}`} style={{textDecoration: 'none', color: 'black'}} className="link" >
+                            <div className="card"> 
+                               <img  
+                               className="vegImage" 
+                               src={recipe.image} alt={recipe.title}/> 
+                               <p>{recipe.title.slice(0, 23)}...</p>
+                            </div>
                             </Link>
                             </SplideSlide>
                         )
                     })
                 }
                 </Splide>
-            </Wrapper>
+               </div>
     </div>
   )
 }
 
-const Wrapper = styled.div` 
-margin: 4rem 0rem; 
-`
 
-const Card = styled.div`
-min-height: 1rem;
-overflow: hidden;  
-
-
-img {
-    width: 160%; 
-    object-fit: fill
-}
-`
 
 export default Veg

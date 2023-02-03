@@ -1,16 +1,18 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import '../App.css'
-import { Link } from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
+
 
 function Searched() {  
 
     let {search} = useParams()
 
-    const [searched, setSearced] = React.useState([])
+    const [searched, setSearced] = React.useState([]) 
+    const navigate = useNavigate()
 
     
-    let API_KEY = '940401677c1c4f04a472a99fab775898'  
+    let API_KEY = 'ed3ffe8c668f4e859ec15356893268a4'  
 
     const getSearched = async(name) => {
         const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&query=${name}`)
@@ -21,23 +23,20 @@ function Searched() {
 
  React.useEffect(() => {
  getSearched(search)
- }, [search])
+ }, [search]) 
+
+
 
   return (
-    <div>
-      <h4 style={{textAlign: 'center', fontWeight: 300}}>Search for {search}</h4>
-    <div className='grid'> 
-    {searched.map((item) => { 
+    <div className='searchContainer'> 
+      {searched && searched.map((item) => {
         return (
-            <Link to={`/recipe/${item.id}`} style={{textDecoration: 'none', color: 'black'}}>
-            <div key={item.id}>
-             <img src={item.image} className="CuisineImage"/>
-             <h4>{item.title}</h4>
-            </div>
-            </Link>
+          <div key={item.id} className="foodAndTitle" style={{cursor: 'pointer'}}   onClick={() => navigate(`/recipe/${item.id}`)}>
+           <img src={item.image} className="searchedImage"/> 
+          <h3 style={{textAlign: 'center'}}>{item.title.slice(0, 23)}....</h3>
+          </div>
         )
-     })}
-    </div>
+      })}
     </div>
   )
 }

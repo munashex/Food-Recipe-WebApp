@@ -1,79 +1,167 @@
-.grid {
- display: grid; 
- grid-template-columns:  auto auto;
- column-gap: 15px;  
- margin-left: -4%;
-}
-
-
 .Search {
     display: flex; 
     justify-content: center; 
-    margin-top: 23px; 
-}
-
-.Search > input {
-    width: 200px;
-    height: 30px;
-    outline: none; 
-    border: none; 
-    background: linear-gradient(35deg, #494949, #313131); 
-    border-radius: 3px; 
-    color: black
+   margin: 20px;
 }
 
 
-.CuisineImage{
-    width: 90%;
-    border-radius: 5px;
-}
 
-@media (min-width: 600px) {
-    .grid {
-        display: grid; 
-        grid-template-columns:  auto auto auto;
-        column-gap: 15px;  
-        margin-left: -4%;
-       } 
+
+@media (min-width: 600px) { 
+
 
        .Search > input {
         width: 400px
        }
+       
 }
 
 
-.recipe_img {
-    width: 80%; 
-}
-.recipe_title_img{
-    width: 50%
-}
-
-.recipe_Info{
-    display: inline;  
-}
-
-.recipe_container {
-    display: flex; 
-    flex-direction: row;
-}
-
-@media (min-width: 600px) {
-   
-    .Info_container{
-        width: 70%
+@media (min-width: 360px) {  
+    .searchContainer {
+        display: grid; 
+        grid-template-columns: auto;  
+        justify-content: center;
+        
     }
+    .foodAndTitle {
+        border: solid 1px grey;
+        margin: 10px
+    }
+    .searchedImage {
+       width: 100%; 
+       height: 16em; 
+       
+    }
+    .recipe_container {
+        display: flex; 
+        flex-direction: column;
+    }
+    .Search > input {
+        background-color: whitesmoke; 
+        border: solid 1px black; 
+        outline: none; 
+        padding: .6em;
+        margin-bottom: 12px;
+    }
+    .categoryList{
+        display: flex;
+        margin-top: 30px; 
+        justify-content: space-evenly; 
+        background-color:  ghostwhite;
+        margin: 10px; 
+        border: solid 1px black;
+        padding: .7em;
+        margin-bottom: 3em; 
+        align-items: center;
+    }
+    .vegImage{ 
+        width: 18.75em;
+    }
+   .card {
+    min-height: 17rem; 
+    overflow: hidden; 
+   }
+   .recipe_img {
+    width: 100%;
+    height: 10em
+   }
+  
 }
 
-@media (min-width: 360px) { 
-    .Info_container{
-        width: 50%
+@media (min-width: 800px) {
+    .searchContainer {
+        display: grid; 
+        grid-template-columns: auto auto auto auto;  
     }
-    .recipe_title_img {
-        margin-left: -30px;
+    .categoryList {
+        display: flex; 
+        justify-content: space-between;  
+        width: 30%; 
+        margin: auto; 
+        margin-bottom: 23px;  
+        border: none;
+    }
+    .Search > input {
+        margin-bottom: 20px; 
+    }
+    .recipe_img {
+        width: 400px; 
+        height: 15em 
+    }
+    
+    .recipe_container {
+        display: flex; 
+        flex-direction: row;
     }
     .Info_container {
         margin-left: 30px; 
     }
 }
 
+@media(min-width: 1920px) {
+    .searchContainer {
+        display: grid; 
+        grid-template-columns: auto auto auto auto auto auto;  
+    }
+    .Search {
+    margin-bottom: 30px;
+   } 
+    .vegImage {
+        width: 500px
+    }
+    .Search > input {
+        width: 600px
+    }
+    .categoryList{
+        display: flex; 
+        justify-content: space-between;  
+        width: 30%; 
+        margin: auto; 
+        margin-bottom: 23px;  
+        border: none;
+    }
+    .recipe_img {
+        width: 600px;
+        height: 18em
+    }
+    }
+@media (min-width: 768px) {
+    .recipe_img{
+        width: 70%; 
+        height: 300px
+    }
+    .searchContainer {
+        display: grid; 
+        grid-template-columns: auto auto auto;  
+    }
+
+}
+
+/* @media (min-width: 820px) {
+    .searchContainer {
+        display: grid; 
+        grid-template-columns: auto auto auto ;  
+    }
+    .recipe_img{
+        width: 350px
+    }
+    .categoryList {
+width: 300px;
+border: solid 1px black;
+    }
+} */
+
+@media (min-width: 721px) {
+    .recipe_img {
+        width: 350px
+    }
+}
+
+
+
+@media (min-width: 670px) {
+    .recipe_img {
+        width: 350px
+    }
+}

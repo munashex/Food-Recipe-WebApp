@@ -1,15 +1,15 @@
 import {useEffect, useState} from 'react'
-import styled from 'styled-components' 
+
 import {Splide, SplideSlide} from '@splidejs/react-splide'
 import '@splidejs/react-splide/css';
-import { Link 
- } from 'react-router-dom';
+import { Link } from 'react-router-dom'; 
+
 function Popular() { 
 
     const [popular, setPopular] = useState([])
 
     const getPopular  = async() => { 
-        let API_KEY = '940401677c1c4f04a472a99fab775898'  
+        let API_KEY = 'ed3ffe8c668f4e859ec15356893268a4'  
 
           const check = localStorage.getItem('popular') 
 
@@ -31,42 +31,32 @@ function Popular() {
      }, [])
 
   return (
-    <div style={{marginTop: -68}}> 
-            <Wrapper>
+    <div> 
+            <div>
                 <h3>Popular Picks</h3>  
-                <Splide options={{perPage: 4, arrows: false, pagination: false, gap: '1rem'}}>
+                <Splide options={{ perPage: 3, arrows: false, gap: 12}}>
                 {
                     popular.map((recipe) => {
                         return (
-                            <SplideSlide key={recipe.id}> 
-                            <Link to={`/recipe/${recipe.id}`} style={{textDecoration: 'none', color: 'black'}}>
-                            <Card> 
-                               <img  src={recipe.image} alt={recipe.title}/> 
+                            <SplideSlide key={recipe.id} className="vegContainer"> 
+                            <Link to={`/recipe/${recipe.id}`} style={{textDecoration: 'none', color: 'black'}} className="link">
+                            <div className="card"> 
+                               <img  src={recipe.image}   
+                               className="vegImage" 
+                               alt={recipe.title}/> 
                                <p>{recipe.title}</p>
-                            </Card> 
+                            </div> 
                             </Link>
                             </SplideSlide>
                         )
                     })
                 }
                 </Splide>
-            </Wrapper>
+            </div>
     </div>
   )
 }
 
-const Wrapper = styled.div` 
-margin: 4rem 0rem; 
-`
 
-const Card = styled.div`
-min-height: 25rem;
-overflow: hidden; 
-
-img {
-    width: 160%; 
-    object-fit: cover
-}
-`
 
 export default Popular

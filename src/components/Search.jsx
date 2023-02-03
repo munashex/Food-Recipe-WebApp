@@ -1,6 +1,5 @@
 import styled from 'styled-components' 
 import {useState} from 'react' 
-import {FaSearch} from 'react-icons/fa'
 import '../App.css'
 import { useNavigate } from 'react-router-dom'
 
@@ -18,7 +17,8 @@ function Search() {
 
   return (
     <form className="Search" onSubmit={SubmitHandler}>
-        <input type="text"  
+        <input type="text"   
+        className="inputSearch"
         onChange={(e) => setInput(e.target.value)}
          placeholder="Search"/>
     </form>
@@ -29,3 +29,5 @@ function Search() {
 
 
 export default Search
+
+
