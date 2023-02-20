@@ -35,7 +35,7 @@ function Veg() {
     <div> 
             <div>
                 <h3>Vegetarian Picks</h3>  
-                <Splide options={{gap: '1rem', perPage: 3, arrows: false, gap: 12}}>
+                <Splide options={{ perPage: 3, arrows: false, gap: 12}}>
                 {
                     Veg.map((recipe) => {
                         return (

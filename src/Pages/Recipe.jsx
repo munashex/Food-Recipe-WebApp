@@ -26,13 +26,13 @@ function Recipe() {
   return (
     <div className="recipe_container">
         <div className="recipe_title_img">
-            <h2 >{details.title}</h2>
+            <h2 style={{fontSize: '17px'}}>{details.title}</h2>
             <img src={details.image} className="recipe_img"/>
         </div> 
 
       <div className='Info_container'> 
           <h2 style={{fontWeight: 400}}>Recipe</h2>
-        <h3  style={{fontWeight: 400, lineHeight: 1.2}} dangerouslySetInnerHTML={{__html: details.instructions}}>
+        <h3  style={{fontWeight: 400, lineHeight: 1.2, fontSize: '16px'}} dangerouslySetInnerHTML={{__html: details.instructions}}>
 
         </h3>
       </div>
