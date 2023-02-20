@@ -1,5 +1,4 @@
 import {useEffect, useState} from 'react'
-import styled from 'styled-components' 
 import {Splide, SplideSlide} from '@splidejs/react-splide'
 import '@splidejs/react-splide/css';
 import {Link} from 'react-router-dom'  
@@ -35,7 +34,7 @@ function Veg() {
     <div> 
             <div>
                 <h3>Vegetarian Picks</h3>  
-                <Splide options={{ perPage: 3, arrows: false, gap: 12}}>
+                <Splide options={{ perPage: 3, arrows: false, gap: 12, pagination:false}}>
                 {
                     Veg.map((recipe) => {
                         return (

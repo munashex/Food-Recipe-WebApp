@@ -18,6 +18,9 @@
 
 
 @media (min-width: 360px) {  
+    .popularPick{
+        margin-top: -80px;
+    }
     .searchContainer {
         display: grid; 
         grid-template-columns: auto;  
@@ -56,7 +59,7 @@
         align-items: center;
     }
     .vegImage{ 
-        width: 18.75em;
+        width: 10.75em;
     }
    .card {
     min-height: 17rem; 
@@ -70,6 +73,9 @@
 }
 
 @media (min-width: 800px) {
+    .popularPick{
+        margin-top: -30px;
+    }
     .searchContainer {
         display: grid; 
         grid-template-columns: auto auto auto auto;  
@@ -97,9 +103,15 @@
     .Info_container {
         margin-left: 30px; 
     }
+    .vegImage {
+        width: 18rem;
+    }
 }
 
 @media(min-width: 1920px) {
+    .popularPick{
+        margin-top: -10px;
+    }
     .searchContainer {
         display: grid; 
         grid-template-columns: auto auto auto auto auto auto;  
@@ -108,7 +120,7 @@
     margin-bottom: 30px;
    } 
     .vegImage {
-        width: 500px
+        width: 27rem
     }
     .Search > input {
         width: 600px

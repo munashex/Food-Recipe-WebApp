@@ -1,5 +1,5 @@
-import {useEffect, useState} from 'react'
-
+import {useEffect, useState} from 'react' 
+import '../App.css'
 import {Splide, SplideSlide} from '@splidejs/react-splide'
 import '@splidejs/react-splide/css';
 import { Link } from 'react-router-dom'; 
@@ -31,10 +31,10 @@ function Popular() {
      }, [])
 
   return (
-    <div> 
+    <div className="popularPick"> 
             <div>
                 <h3>Popular Picks</h3>  
-                <Splide options={{ perPage: 3, arrows: false, gap: 12}}>
+                <Splide options={{ perPage: 3, arrows: false, gap: 12, pagination:false}}>
                 {
                     popular.map((recipe) => {
                         return (
